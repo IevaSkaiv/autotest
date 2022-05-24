@@ -11,7 +11,7 @@ public class Common {
         Driver.getDriver().get(url);
     }
 
-    public static WebElement getElement(By locator){
+    public static WebElement getElement(By locator) {
         return Driver.getDriver().findElement(locator);
     }
 
@@ -23,7 +23,7 @@ public class Common {
         getElement(locator).sendKeys(keys);
     }
 
-    public static String getElementText(By locator){
+    public static String getElementText(By locator) {
         return getElement(locator).getText();
     }
 

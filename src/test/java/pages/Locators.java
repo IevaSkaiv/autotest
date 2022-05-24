@@ -25,7 +25,16 @@ public class Locators {
 
         public static class SelectDropdownList{
             public static By selectDayOfWeek = By.xpath("//*[@id='select-demo']");
-            public static By fieldDayOfWeek = By.xpath("//*[class='selected-value']");
+            public static By fieldDayOfWeek = By.xpath("//*[@class='selected-value']");
+        }
+
+        public static class RadioButtonsDemo{
+            public static By inputRadioButtonGender(String gender){
+                return By.xpath(String.format("//*[@value = '%s' and @name = 'optradio']", gender));
+            }
+
+            public static By buttonRadioButton = By.xpath("//*[@id='buttoncheck']");
+            public static By fieldRadioButton = By.xpath("//*[@class='radiobutton']");
         }
     }
 }

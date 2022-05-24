@@ -3,7 +3,7 @@ package pages.seleniumEasy;
 import pages.Common;
 import pages.Locators;
 
-public class SelectDropDownList {
+public class SelectDropdownList {
     public static void open() {
         Common.openUrl("https://demo.seleniumeasy.com/basic-select-dropdown-demo.html");
     }
