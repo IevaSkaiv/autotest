@@ -4,25 +4,24 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.seleniumEasy.SimpleFormDemo;
 import utilities.Driver;
 
-public class TestSelenium {
+public class SimpleFormDemo {
 
     @BeforeMethod
     public void setup() {
         Driver.setDriver();
-        SimpleFormDemo.open();
-        SimpleFormDemo.closeAd();
+        pages.seleniumEasy.SimpleFormDemo.open();
+        pages.seleniumEasy.SimpleFormDemo.closeAd();
     }
 
     @Test
     public void testImputFieldSeleniumEasy() {
         String fullName = "Ieva";
 
-        SimpleFormDemo.enterMessage(fullName);
-        SimpleFormDemo.clickShowMessageButton();
-        String textMessage = SimpleFormDemo.readMessage();
+        pages.seleniumEasy.SimpleFormDemo.enterMessage(fullName);
+        pages.seleniumEasy.SimpleFormDemo.clickShowMessageButton();
+        String textMessage = pages.seleniumEasy.SimpleFormDemo.readMessage();
 
         Assert.assertEquals(textMessage, fullName);
     }
@@ -33,10 +32,10 @@ public class TestSelenium {
         int input2 = 7;
         int sum = 12;
 
-        SimpleFormDemo.enterValueA(Integer.toString(input1));
-        SimpleFormDemo.enterValueB(Integer.toString(input2));
-        SimpleFormDemo.clickGetTotalButton();
-        String actualSumText = SimpleFormDemo.readTotal();
+        pages.seleniumEasy.SimpleFormDemo.enterValueA(Integer.toString(input1));
+        pages.seleniumEasy.SimpleFormDemo.enterValueB(Integer.toString(input2));
+        pages.seleniumEasy.SimpleFormDemo.clickGetTotalButton();
+        String actualSumText = pages.seleniumEasy.SimpleFormDemo.readTotal();
 
         Assert.assertEquals(actualSumText, Integer.toString(sum));
     }
