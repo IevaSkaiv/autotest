@@ -1,22 +1,20 @@
 package tests.seleniumEasy;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import utilities.Driver;
+import tests.BaseTest;
 
-public class SimpleFormDemo {
+public class SimpleFormDemo extends BaseTest {
 
     @BeforeMethod
-    public void setup() {
-        Driver.setDriver();
+    public void initialize() {
         pages.seleniumEasy.SimpleFormDemo.open();
         pages.seleniumEasy.SimpleFormDemo.closeAd();
     }
 
     @Test
-    public void testImputFieldSeleniumEasy() {
+    public void testInputFieldSeleniumEasy() {
         String fullName = "Ieva";
 
         pages.seleniumEasy.SimpleFormDemo.enterMessage(fullName);
@@ -38,10 +36,5 @@ public class SimpleFormDemo {
         String actualSumText = pages.seleniumEasy.SimpleFormDemo.readTotal();
 
         Assert.assertEquals(actualSumText, Integer.toString(sum));
-    }
-
-    @AfterMethod
-    public void teardown() {
-        Driver.closeDriver();
     }
 }
