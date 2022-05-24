@@ -13,23 +13,6 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class TestSelenium {
-
-    @Test
-    public void testImputFieldDemoQA(){
-        String fullName = "Ieva";
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-
-        driver.get("https://demoqa.com/text-box");
-
-        WebElement inputFullName = driver.findElement(By.xpath("//*[@id='userName']"));
-//        driver.findElement(By.id("userName"));
-//        driver.findElement(By.cssSelector("#userName"));
-
-        inputFullName.sendKeys(fullName);
-
-       driver.quit();
-    }
     @Test
     public void testImputFieldSeleniumEasy(){
         String fullName = "Ieva";
