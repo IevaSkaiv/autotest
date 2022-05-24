@@ -1,7 +1,6 @@
 package pages.seleniumEasy;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.Common;
@@ -13,10 +12,9 @@ public class SimpleFormDemo {
 
     public static void open(){
         Common.openUrl("https://demo.seleniumeasy.com/basic-first-form-demo.html");
-        closeAdd();
     }
 
-    public static void closeAdd(){
+    public static void closeAd(){
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='at-cv-lightbox-win']")));
 
