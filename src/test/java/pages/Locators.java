@@ -31,12 +31,22 @@ public class Locators {
         }
 
         public static class RadioButtonsDemo{
-            public static By inputRadioButtonGender(String gender){
+            public static By inputByGender(String gender){
                 return By.xpath(String.format("//*[@value = '%s' and @name = 'optradio']", gender));
             }
 
             public static By buttonRadioButton = By.xpath("//*[@id='buttoncheck']");
             public static By fieldRadioButton = By.xpath("//*[@class='radiobutton']");
+
+            public static By inputByGroupGender(String gender){
+                return By.xpath(String.format("//*[@value = '%s' and @name = 'gender']", gender));
+            }
+            public static By inputByAge(String ageGroup){
+                return By.xpath(String.format("//*[@value = '%s' and @name = 'ageGroup']", ageGroup));
+            }
+
+            public static By buttonGetValues = By.xpath("(//button)[3]");
+            public static By fieldValue = By.xpath("//*[@class='groupradiobutton']");
         }
     }
 }
