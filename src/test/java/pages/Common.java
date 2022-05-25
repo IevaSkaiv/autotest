@@ -53,4 +53,8 @@ public class Common {
         }
         return statusList;
     }
+
+    public static void acceptAlert(){
+        Driver.getDriver().switchTo().alert().accept();
+    }
 }
