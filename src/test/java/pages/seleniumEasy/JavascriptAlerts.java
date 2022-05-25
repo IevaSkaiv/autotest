@@ -34,4 +34,24 @@ public class JavascriptAlerts {
     public static boolean isAlertIsPresent() {
         return Common.isAlertPresesnt();
     }
+
+    public static void clickButtonToOpenPromptBox() {
+        Common.clickElement(Locators.SeleniumEasy.JavascriptAlerts.buttonForPromptBox);
+    }
+
+    public static void sendKeysToPromptBox(String message) {
+        Common.sendKeysToAlert(message);
+    }
+
+    public static void clickOkToClosePromptBox() {
+        Common.acceptAlert();
+    }
+
+    public static String readMessageFromPromptBox() {
+        return Common.getElementText(Locators.SeleniumEasy.JavascriptAlerts.fieldPromptBoxMessage);
+    }
+
+    public static void clickCancelToClosePromptBox() {
+        Common.dismissAlert();
+    }
 }

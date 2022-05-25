@@ -71,4 +71,13 @@ public class Common {
             return false;
         }
     }
+
+    public static void sendKeysToAlert(String message) {
+        Driver.getDriver().switchTo().alert().sendKeys(message);
+    }
+
+    public static Boolean isElementPresent(By locator){
+        List<WebElement> elements = getElements(locator);
+        return elements.size() > 0;
+    }
 }
