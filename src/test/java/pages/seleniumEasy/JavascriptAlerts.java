@@ -15,4 +15,8 @@ public class JavascriptAlerts {
     public static void clickOkToCloseAlertBox() {
         Common.acceptAlert();
     }
+
+    public static boolean isAlertIsPresent() {
+        return Common.isAlertPresesnt();
+    }
 }
