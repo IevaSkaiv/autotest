@@ -5,6 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import utilities.Driver;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Common {
 
     public static void openUrl(String url){
@@ -15,6 +19,10 @@ public class Common {
         return Driver.getDriver().findElement(locator);
     }
 
+    public static List<WebElement> getElements(By locator)
+    {
+        return Driver.getDriver().findElements(locator);
+    }
     public static void clickElement(By locator){
         getElement(locator).click();
     }
@@ -31,5 +39,18 @@ public class Common {
         WebElement webElement = getElement(locator);
         Select selectElement = new Select(webElement);
         selectElement.selectByValue(value);
+    }
+
+    public static String getElementAttributValue(By locator, String attributeName){
+        return getElement(locator).getAttribute(attributeName);
+    }
+
+    public static List<Boolean> getSelectedStatusForCheckboxesByLocator(By locator){
+        List<WebElement> elements = Common.getElements(locator);
+        List<Boolean> statusList = new ArrayList(Arrays.asList());
+        for (WebElement element : elements) {
+            statusList.add(element.isSelected());
+        }
+        return statusList;
     }
 }
