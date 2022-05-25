@@ -17,9 +17,16 @@ public class RadioButtonsDemo extends BaseTest {
         String gender = "Male";
         pages.seleniumEasy.RadioButtonsDemo.inputRadioButton(gender);
         pages.seleniumEasy.RadioButtonsDemo.clickGetCheckedValue();
-        String actualMessege = pages.seleniumEasy.RadioButtonsDemo.readMessege();
+        String actualMessage = pages.seleniumEasy.RadioButtonsDemo.readMessege();
 
-        Assert.assertTrue(actualMessege.contains(gender));
+        Assert.assertTrue(actualMessage.contains(gender));
+
+        gender = "Female";
+        pages.seleniumEasy.RadioButtonsDemo.inputRadioButton(gender);
+        pages.seleniumEasy.RadioButtonsDemo.clickGetCheckedValue();
+        actualMessage = pages.seleniumEasy.RadioButtonsDemo.readMessege();
+
+        Assert.assertTrue(actualMessage.contains(gender));
 
     }
 
