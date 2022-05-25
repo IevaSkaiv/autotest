@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import utilities.Driver;
@@ -56,5 +57,18 @@ public class Common {
 
     public static void acceptAlert(){
         Driver.getDriver().switchTo().alert().accept();
+    }
+
+    public static void dismissAlert(){
+        Driver.getDriver().switchTo().alert().dismiss();
+    }
+
+    public static boolean isAlertPresesnt() {
+        try{
+            Driver.getDriver().switchTo().alert();
+            return true;
+        }catch(NoAlertPresentException ex){
+            return false;
+        }
     }
 }

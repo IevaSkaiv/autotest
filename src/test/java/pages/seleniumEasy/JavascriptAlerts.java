@@ -16,6 +16,21 @@ public class JavascriptAlerts {
         Common.acceptAlert();
     }
 
+    public static void clickButtonToOpenConfirmBox() {
+        Common.clickElement(Locators.SeleniumEasy.JavascriptAlerts.buttonForConfirmBox);
+    }
+
+    public static void clickOktoCloseConfirmBox() {
+        Common.acceptAlert();
+    }
+
+    public static String readMessageFromConfirmBox() {
+        return Common.getElementText(Locators.SeleniumEasy.JavascriptAlerts.fieldConfirmBoxMessage);
+    }
+
+    public static void clickCanceltoCloseConfirmBox() {
+        Common.dismissAlert();
+    }
     public static boolean isAlertIsPresent() {
         return Common.isAlertPresesnt();
     }
