@@ -57,5 +57,39 @@ public class Locators {
             public static By fieldPromptBoxMessage = By.xpath("//*[@id='prompt-demo']");
 
         }
+
+        public static class InputFormSubmit{
+            public static By inputFirstName = By.xpath("//*[@name = 'first_name']");
+            public static By inputLastName = By.xpath("//*[@name = 'last_name']");
+            public static By inputEmail = By.xpath("//*[@name = 'email']");
+            public static By inputPhone = By.xpath("//*[@name = 'phone']");
+            public static By inputAddress = By.xpath("//*[@name = 'address']");
+            public static By inputCity = By.xpath("//*[@name = 'city']");
+            public static By selectState = By.xpath("//*[@name = 'state']");
+            public static By inputZipCode = By.xpath("//*[@name = 'zip']");
+            public static By inputWebsite = By.xpath("//*[@name = 'website']");
+
+            public static By inputDoYouHaveHosting(String value){
+                return By.xpath(String.format("//*[@value='%s']", value));
+            }
+
+            public static By inputProjectDescription = By.xpath("//*[@name='comment']");
+
+        }
+    }
+
+    public static class DemoQA{
+        public static class HomePage{
+            public static By menuElements = By.xpath("(//*[@class = 'card mt-4 top-card'])[1]");
+        }
+
+        public static class Elements{
+            public static By menuButtons = By.xpath("(//*[@class='element-group'])[1]//*[@id = 'item-4']");
+        }
+
+        public class Buttons{
+            public static By buttonDoubleClick = By.xpath("//*[@id = 'doubleClickBtn']");
+            public static By fieldDoubleClick = By.xpath("//*[@id = 'doubleClickMessage']");
+        }
     }
 }

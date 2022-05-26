@@ -2,10 +2,13 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import utilities.Driver;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -79,5 +82,14 @@ public class Common {
     public static Boolean isElementPresent(By locator){
         List<WebElement> elements = getElements(locator);
         return elements.size() > 0;
+    }
+
+    public static void doubleClick(By locator) {
+        WebElement element = getElement(locator);
+
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(element);
+        actions.doubleClick();
+        actions.perform();
     }
 }
