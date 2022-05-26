@@ -92,4 +92,13 @@ public class Common {
         actions.doubleClick();
         actions.perform();
     }
+
+    public static void rightClick(By locator) {
+        WebElement element = getElement(locator);
+
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(element);
+        actions.contextClick();
+        actions.perform();
+    }
 }

@@ -90,6 +90,8 @@ public class Locators {
         public class Buttons{
             public static By buttonDoubleClick = By.xpath("//*[@id = 'doubleClickBtn']");
             public static By fieldDoubleClick = By.xpath("//*[@id = 'doubleClickMessage']");
+            public static By buttonRightClick = By.xpath("//*[@id = 'rightClickBtn']");
+            public static By fieldRightClick = By.xpath("//*[@id = 'rightClickMessage']");
         }
     }
 }
